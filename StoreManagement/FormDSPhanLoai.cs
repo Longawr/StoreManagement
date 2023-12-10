@@ -1,7 +1,16 @@
-﻿using StoreManagement.BUS;
+﻿using Microsoft.Office.Interop.Excel;
+using StoreManagement.BUS;
 using StoreManagement.DAO;
 using StoreManagement.DTO;
+using StoreManagement.Utils;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StoreManagement
@@ -9,6 +18,8 @@ namespace StoreManagement
     public partial class FormDSPhanLoai : Form
     {
         PhanLoaiDTO phanLoai;
+        private System.Data.DataTable dataTable;
+
         public FormDSPhanLoai()
         {
             InitializeComponent();
@@ -16,7 +27,11 @@ namespace StoreManagement
 
         private void FormDSPhanLoai_Load(object sender, EventArgs e)
         {
-            dgvPhanLoai.DataSource = PhanLoaiDAO.Instance.DSPhanLoai();
+            dataTable = PhanLoaiDAO.Instance.DSPhanLoai();
+            dgvPhanLoai.DataSource = dataTable;
+
+            PhanTrang.Instance.Load(dataTable, dgvPhanLoai, lblPageview);
+
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -104,6 +119,28 @@ namespace StoreManagement
                 result = true;
             }
             return result;
+        }
+
+        private void btnDauTrang_Click(object sender, EventArgs e)
+        {
+            PhanTrang.Instance.DauTrang(dataTable, dgvPhanLoai, lblPageview);
+        }
+
+        private void btnFwd_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có trang tiếp theo không
+            PhanTrang.Instance.TrangKeTiep(dataTable, dgvPhanLoai, lblPageview);
+        }
+
+        private void btnEPg_Click(object sender, EventArgs e)
+        {
+            PhanTrang.Instance.TrangCuoi(dataTable, dgvPhanLoai, lblPageview);
+        }
+
+        private void btnBck_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có trang trước đó không
+            PhanTrang.Instance.TrangKeTruoc(dataTable, dgvPhanLoai, lblPageview);
         }
     }
 }

@@ -39,9 +39,9 @@ namespace StoreManagement.DAO
 
         internal int DoiMK(string maNV, string mkCu, string mkMoi)
         {
-            string query = "update TaiKhoan set MatKhau = @mkMoi" +
-                " where MaNhanVien = @maNV and MatKhau = @mkCu";
-            object[] parameter = { mkMoi, mkCu, maNV };
+            string query = "update TaiKhoan set MatKhau = @mkMoi " +
+                " where MaNhanVien = @maNV and MatKhau = @mkCu ";
+            object[] parameter = { mkMoi, maNV, mkCu };
             int result = DataProvider.Instance.ExecuteNonQuery(query, parameter);
             Console.WriteLine(result);
             return result;

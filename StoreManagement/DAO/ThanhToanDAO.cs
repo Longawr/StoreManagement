@@ -1,6 +1,12 @@
 ﻿using StoreManagement.DTO;
 using StoreManagement.Utils;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StoreManagement.DAO
 {
@@ -34,7 +40,7 @@ namespace StoreManagement.DAO
                 " MaSanPham as 'Mã sản phẩm' ," +
                 " TenSanPham as 'Tên sản phẩm' ," +
                 " PhanLoai.TenLoai as 'Tên loại' ," +
-                " SoLuong as 'Số lượng' ," +
+                " SoLuong as 'Tồn kho' ," +
                 " GiaTien as 'Giá' " +
                 " from SanPham inner join PhanLoai on SanPham.MaLoai = PhanLoai.MaLoai " +
                 " where TenSanPham like @tenSanPham "; ;
@@ -52,8 +58,8 @@ namespace StoreManagement.DAO
         public bool LuuCTHD(ThanhToanDTO thanhToan)
         {
             bool result = false;
-            string query = "insert into ChiTietHoaDon values ( @MaHoaDon , @MaSanPham , @SoLuong , @DonGia , @GiamGia , @ThanhTien )";
-            object[] parameters = { thanhToan.MaHoaDon, thanhToan.MaSanPham, thanhToan.SoLuong, thanhToan.DonGia, thanhToan.GiamGia, thanhToan.ThanhTien };
+            string query = "insert into ChiTietHoaDon values ( @MaHoaDon , @MaSanPham , @SoLuong , @DonGia , @GiamGia , @ThanhTien , @GiamGiaSP )";
+            object[] parameters = { thanhToan.MaHoaDon, thanhToan.MaSanPham, thanhToan.SoLuong, thanhToan.DonGia, thanhToan.GiamGia, thanhToan.ThanhTien, thanhToan.GiamGiaSP };
 
             if (DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0)
             {

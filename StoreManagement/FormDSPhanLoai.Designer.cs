@@ -35,7 +35,14 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvPhanLoai = new System.Windows.Forms.DataGridView();
+            this.pnlPage = new System.Windows.Forms.Panel();
+            this.lblPageview = new System.Windows.Forms.Label();
+            this.btnEPg = new System.Windows.Forms.Button();
+            this.btnFwd = new System.Windows.Forms.Button();
+            this.btnBck = new System.Windows.Forms.Button();
+            this.btnDauTrang = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhanLoai)).BeginInit();
+            this.pnlPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRefresh
@@ -52,7 +59,7 @@
             // 
             // tbxTimKiem
             // 
-            this.tbxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxTimKiem.Location = new System.Drawing.Point(12, 546);
             this.tbxTimKiem.Name = "tbxTimKiem";
@@ -109,8 +116,8 @@
             // 
             // dgvPhanLoai
             // 
-            this.dgvPhanLoai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvPhanLoai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPhanLoai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhanLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -118,14 +125,88 @@
             this.dgvPhanLoai.Name = "dgvPhanLoai";
             this.dgvPhanLoai.RowHeadersWidth = 62;
             this.dgvPhanLoai.RowTemplate.Height = 28;
-            this.dgvPhanLoai.Size = new System.Drawing.Size(1069, 505);
+            this.dgvPhanLoai.Size = new System.Drawing.Size(1069, 440);
             this.dgvPhanLoai.TabIndex = 22;
+            // 
+            // pnlPage
+            // 
+            this.pnlPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pnlPage.Controls.Add(this.lblPageview);
+            this.pnlPage.Controls.Add(this.btnEPg);
+            this.pnlPage.Controls.Add(this.btnFwd);
+            this.pnlPage.Controls.Add(this.btnBck);
+            this.pnlPage.Controls.Add(this.btnDauTrang);
+            this.pnlPage.Location = new System.Drawing.Point(232, 465);
+            this.pnlPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlPage.Name = "pnlPage";
+            this.pnlPage.Size = new System.Drawing.Size(593, 59);
+            this.pnlPage.TabIndex = 43;
+            // 
+            // lblPageview
+            // 
+            this.lblPageview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPageview.Location = new System.Drawing.Point(243, 23);
+            this.lblPageview.Name = "lblPageview";
+            this.lblPageview.Size = new System.Drawing.Size(84, 27);
+            this.lblPageview.TabIndex = 4;
+            this.lblPageview.Text = " ";
+            this.lblPageview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnEPg
+            // 
+            this.btnEPg.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEPg.Location = new System.Drawing.Point(459, 22);
+            this.btnEPg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEPg.Name = "btnEPg";
+            this.btnEPg.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnEPg.Size = new System.Drawing.Size(59, 29);
+            this.btnEPg.TabIndex = 3;
+            this.btnEPg.Text = ">|";
+            this.btnEPg.UseVisualStyleBackColor = true;
+            this.btnEPg.Click += new System.EventHandler(this.btnEPg_Click);
+            // 
+            // btnFwd
+            // 
+            this.btnFwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFwd.Location = new System.Drawing.Point(366, 22);
+            this.btnFwd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFwd.Name = "btnFwd";
+            this.btnFwd.Size = new System.Drawing.Size(57, 29);
+            this.btnFwd.TabIndex = 2;
+            this.btnFwd.Text = ">>";
+            this.btnFwd.UseVisualStyleBackColor = true;
+            this.btnFwd.Click += new System.EventHandler(this.btnFwd_Click);
+            // 
+            // btnBck
+            // 
+            this.btnBck.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBck.Location = new System.Drawing.Point(146, 20);
+            this.btnBck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBck.Name = "btnBck";
+            this.btnBck.Size = new System.Drawing.Size(52, 29);
+            this.btnBck.TabIndex = 1;
+            this.btnBck.Text = "<<";
+            this.btnBck.UseVisualStyleBackColor = true;
+            this.btnBck.Click += new System.EventHandler(this.btnBck_Click);
+            // 
+            // btnDauTrang
+            // 
+            this.btnDauTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDauTrang.Location = new System.Drawing.Point(38, 21);
+            this.btnDauTrang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDauTrang.Name = "btnDauTrang";
+            this.btnDauTrang.Size = new System.Drawing.Size(60, 28);
+            this.btnDauTrang.TabIndex = 0;
+            this.btnDauTrang.Text = "|<";
+            this.btnDauTrang.UseVisualStyleBackColor = true;
+            this.btnDauTrang.Click += new System.EventHandler(this.btnDauTrang_Click);
             // 
             // FormDSPhanLoai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 594);
+            this.Controls.Add(this.pnlPage);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.tbxTimKiem);
             this.Controls.Add(this.btnTimKiem);
@@ -137,6 +218,7 @@
             this.Text = "FormDSPhanLoai";
             this.Load += new System.EventHandler(this.FormDSPhanLoai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhanLoai)).EndInit();
+            this.pnlPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +233,11 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvPhanLoai;
+        private System.Windows.Forms.Panel pnlPage;
+        private System.Windows.Forms.Label lblPageview;
+        private System.Windows.Forms.Button btnEPg;
+        private System.Windows.Forms.Button btnFwd;
+        private System.Windows.Forms.Button btnBck;
+        private System.Windows.Forms.Button btnDauTrang;
     }
 }

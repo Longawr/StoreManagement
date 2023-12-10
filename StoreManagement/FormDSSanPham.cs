@@ -1,11 +1,11 @@
 ﻿using StoreManagement.BUS;
 using StoreManagement.DAO;
 using StoreManagement.DTO;
-using StoreManagement.Utils;
 using System;
 using System.ComponentModel;
-using System.Data;
 using System.Windows.Forms;
+using System.Data;
+using StoreManagement.Utils;
 
 namespace StoreManagement
 {
@@ -14,10 +14,6 @@ namespace StoreManagement
         SanPhamDTO sanPham;
         FormThemSP them;
         private DataTable dataTable;
-        private int itemsPerPage = 5; // Số mục trên mỗi trang
-        private int currentPage = 1;
-        private int totalItems;
-        private int totalPages;
 
         public FormDSSanPham()
         {
@@ -27,24 +23,15 @@ namespace StoreManagement
         {
 
             //Dgv
-            dgvSanPham.DataSource = SanPhamDAO.Instance.DSSanPham();
+            dataTable = SanPhamDAO.Instance.DSSanPham();
+            dgvSanPham.DataSource = dataTable;
             dgvSanPham.Columns["Ảnh"].ReadOnly = true;
             dgvSanPham.Columns["Mã sản phẩm"].Visible = false;
             // Sắp xếp tăng dần theo cột "Tên Cột"
             dgvSanPham.Sort(dgvSanPham.Columns["Tên sản phẩm"], ListSortDirection.Ascending);
 
-            dataTable = SanPhamDAO.Instance.DSSanPham();
-            totalItems = dgvSanPham.Rows.Count;
 
-            // Tính toán số trang
-            totalPages = (int)Math.Ceiling((double)totalItems / itemsPerPage);
-
-            // Hiển thị trang đầu tiên
-            DisplayDataOnCurrentPage();
-
-            // Cập nhật thông tin trang
-            UpdatePageInfo();
-
+            PhanTrang.Instance.Load(dataTable, dgvSanPham, lblPageview);
 
             //Dua du lieu tu bang NhaCungCap vao combobox
             cbxTimPL.DataSource = cbxPhanLoai.DataSource = PhanLoaiDAO.Instance.DSPhanLoai();
@@ -52,37 +39,14 @@ namespace StoreManagement
             cbxTimPL.ValueMember = cbxPhanLoai.ValueMember = "Mã loại";
 
             //Xu ly hien thi hinh anh
-            DataGridViewImageColumn img = (DataGridViewImageColumn)dgvSanPham.Columns[0];
+            DataGridViewImageColumn img = new DataGridViewImageColumn();
+            img = (DataGridViewImageColumn)dgvSanPham.Columns[0];
             img.ImageLayout = DataGridViewImageCellLayout.Zoom;
 
             //GroupBox Info
             gbxInfo.Enabled = false;
 
             clearInfo();
-        }
-
-
-        private void DisplayDataOnCurrentPage()
-        {
-            // Lấy dữ liệu của trang hiện tại
-            int startIndex = (currentPage - 1) * itemsPerPage;
-            int endIndex = Math.Min(startIndex + itemsPerPage - 1, totalItems - 1);
-
-            // Tạo một DataTable mới chứa dữ liệu của trang hiện tại
-            DataTable currentPageData = dataTable.Clone();
-            for (int i = startIndex; i <= endIndex; i++)
-            {
-                currentPageData.ImportRow(dataTable.Rows[i]);
-            }
-
-            // Hiển thị dữ liệu trên DataGridView
-            dgvSanPham.DataSource = currentPageData;
-        }
-
-        private void UpdatePageInfo()
-        {
-            // Hiển thị thông tin về trang
-            lblPageview.Text = $"{currentPage} / {totalPages}";
         }
 
 
@@ -93,10 +57,12 @@ namespace StoreManagement
             string maSanPham = tbxMaSP.Text;
             string tenSanPham = tbxTenSP.Text;
             string maLoai = cbxPhanLoai.SelectedValue.ToString();
-            int soLuong = int.Parse(tbxSoLuong.Text);
+            int tonKho = int.Parse(tbxSoLuong.Text);
+            float giaNhap = float.Parse(tbxGiaNhap.Text);
             float giaTien = float.Parse(tbxGiaTien.Text);
-
-            sanPham = new SanPhamDTO(anh, maSanPham, tenSanPham, maLoai, soLuong, giaTien);
+            float giamGia = float.Parse(cbxGiamGia.Text);
+            int soLuongNhap = int.Parse(dgvSanPham.SelectedRows[0].Cells["Số lượng nhập"].Value.ToString());
+            sanPham = new SanPhamDTO(anh, maSanPham, tenSanPham, maLoai, tonKho, giaTien, giamGia, giaNhap, soLuongNhap);
         }
 
         //Chon anh tu may tinh
@@ -127,8 +93,10 @@ namespace StoreManagement
             tbxMaSP.Text = dgvSanPham.SelectedRows[0].Cells["Mã sản phẩm"].Value.ToString();
             tbxTenSP.Text = dgvSanPham.SelectedRows[0].Cells["Tên sản phẩm"].Value.ToString();
             cbxPhanLoai.Text = dgvSanPham.SelectedRows[0].Cells["Tên loại"].Value.ToString();
-            tbxSoLuong.Text = dgvSanPham.SelectedRows[0].Cells["Số lượng"].Value.ToString();
-            tbxGiaTien.Text = dgvSanPham.SelectedRows[0].Cells["Giá"].Value.ToString();
+            tbxSoLuong.Text = dgvSanPham.SelectedRows[0].Cells["Tồn kho"].Value.ToString();
+            tbxGiaTien.Text = dgvSanPham.SelectedRows[0].Cells["Giá bán"].Value.ToString();
+            tbxGiaNhap.Text = dgvSanPham.SelectedRows[0].Cells["Giá nhập"].Value.ToString();
+            cbxGiamGia.Text = dgvSanPham.SelectedRows[0].Cells["Giảm giá"].Value.ToString();
         }
 
         //Xoa thong tin
@@ -206,53 +174,55 @@ namespace StoreManagement
 
         private void btnDauTrang_Click(object sender, EventArgs e)
         {
-            currentPage = 1;
-            DisplayDataOnCurrentPage();
-            UpdatePageInfo();
+            PhanTrang.Instance.DauTrang(dataTable, dgvSanPham, lblPageview);
         }
 
         private void btnFwd_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem có trang tiếp theo không
-            if (currentPage < totalPages)
-            {
-                currentPage++;
-                DisplayDataOnCurrentPage();
-                UpdatePageInfo();
-            }
+            PhanTrang.Instance.TrangKeTiep(dataTable, dgvSanPham, lblPageview);
         }
 
         private void btnEPg_Click(object sender, EventArgs e)
         {
-            currentPage = totalPages;
-            DisplayDataOnCurrentPage();
-            UpdatePageInfo();
+            PhanTrang.Instance.TrangCuoi(dataTable, dgvSanPham, lblPageview);
         }
 
         private void btnBck_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem có trang trước đó không
-            if (currentPage > 1)
+            PhanTrang.Instance.TrangKeTruoc(dataTable, dgvSanPham, lblPageview);
+        }
+
+        private void btnNhapHang_Click(object sender, EventArgs e)
+        {
+            FormNhapSoLuong formNhapSoLuong = new FormNhapSoLuong();
+            formNhapSoLuong.ShowDialog();
+            int GetAmount = formNhapSoLuong.GetAmount();
+            string maSp = tbxMaSP.Text;
+            int tonKho = int.Parse(tbxSoLuong.Text) + GetAmount;
+            int soLuongNhap = int.Parse(dgvSanPham.SelectedRows[0].Cells["Số lượng nhập"].Value.ToString()) + GetAmount;
+
+            try
             {
-                currentPage--;
-                DisplayDataOnCurrentPage();
-                UpdatePageInfo();
+                if (SanPhamBUS.Instance.NhapHang(tonKho, soLuongNhap, maSp) == true)
+                {
+                    MessageBox.Show("Nhập hàng thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Nhập hàng không thành công");
+                }
+                clearInfo();
+                FormDSSanPham_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                //throw ex;
+                MessageBox.Show("Lỗi: " + ex);
             }
         }
 
-        /*private void dgvSanPham_CustomSortCompare(object sender, DataGridViewSortCompareEventArgs e)
-        {
-           
-           for (int i = 0; i < dgvSanPham.RowCount - 1; i++)
-           {
-                string[] id = dgvSanPham.Rows[i].Cells["Mã sản phẩm"].Value.ToString().Split('-');
-                string[] id2 = dgvSanPham.Rows[i + 1].Cells["Mã sản phẩm"].Value.ToString().Split('-');
-                int index = int.Parse(id[1]);
-                int index2 = int.Parse(id2[1]);
-                e.SortResult = index.CompareTo(index2);
-                e.Handled = true;
-           }
-            dgvSanPham.SortCompare += dgvSanPham_CustomSortCompare;
-        }*/
+
     }
 }

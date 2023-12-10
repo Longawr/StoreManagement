@@ -20,16 +20,10 @@ namespace StoreManagement
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            try
-            {
-                TaiKhoanBUS.Instance.DoiMatKhau(tbxMatKhauCu.Text, tbxMatKhauMoi.Text, tbxXacNhanMK.Text);
-                MessageBox.Show("Đổi mật khẩu thành công");
+            string[] message = TaiKhoanBUS.Instance.DoiMatKhau(tbxMatKhauCu.Text, tbxMatKhauMoi.Text, tbxXacNhanMK.Text);
+            MessageBox.Show(message[1], message[0]);
+            if (message[0] == "success")
                 Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }

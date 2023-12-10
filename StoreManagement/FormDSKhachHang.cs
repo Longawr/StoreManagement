@@ -1,7 +1,16 @@
-﻿using StoreManagement.BUS;
+﻿using Microsoft.Office.Interop.Excel;
+using StoreManagement.BUS;
 using StoreManagement.DAO;
 using StoreManagement.DTO;
+using StoreManagement.Utils;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StoreManagement
@@ -10,6 +19,8 @@ namespace StoreManagement
     {
         KhachHangDTO KH;
         string maKH;
+        private System.Data.DataTable dataTable;
+
         public FormDSKhachHang()
         {
             InitializeComponent();
@@ -17,13 +28,16 @@ namespace StoreManagement
 
         private void FormDSKhachHang_Load(object sender, EventArgs e)
         {
-            dgvKH.DataSource = KhachHangDAO.Instance.DSKhachHang();
+            dataTable = KhachHangDAO.Instance.DSKhachHang();
+            dgvKH.DataSource = dataTable;
             dgvKH.Columns["Mã khách hàng"].ReadOnly = true;
 
             if (this.TopLevel == false)
             {
                 btnChonKH.Enabled = false;
             }
+
+            PhanTrang.Instance.Load(dataTable, dgvKH, lblPageview);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -128,6 +142,28 @@ namespace StoreManagement
         private void btnRefresh_Click_1(object sender, EventArgs e)
         {
             FormDSKhachHang_Load(sender, e);
+        }
+
+        private void btnDauTrang_Click(object sender, EventArgs e)
+        {
+            PhanTrang.Instance.DauTrang(dataTable, dgvKH, lblPageview);
+        }
+
+        private void btnFwd_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có trang tiếp theo không
+            PhanTrang.Instance.TrangKeTiep(dataTable, dgvKH, lblPageview);
+        }
+
+        private void btnEPg_Click(object sender, EventArgs e)
+        {
+            PhanTrang.Instance.TrangCuoi(dataTable, dgvKH, lblPageview);
+        }
+
+        private void btnBck_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có trang trước đó không
+            PhanTrang.Instance.TrangKeTruoc(dataTable, dgvKH, lblPageview);
         }
     }
 }

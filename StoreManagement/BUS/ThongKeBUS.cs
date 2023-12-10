@@ -40,5 +40,21 @@ namespace StoreManagement.BUS
             string month = DateTime.Now.Month.ToString();
             return ThongKeDAO.Instance.SLHoaDon(month);
         }
+
+        public DataTable SanPhamTonKho(DateTime start, DateTime end)
+        {
+            DataTable data = ThongKeDAO.Instance.SanPhamTonKho(start, end);
+            return data;
+        }
+        public DataTable SanPhamDaBan(DateTime start, DateTime end)
+        {
+            DataTable data = ThongKeDAO.Instance.SanPhamDaBan(start, end);
+            return data;
+        }
+        public DataTable DoanhThu(DateTime start, DateTime end)
+        {
+            DataTable data = ThongKeDAO.Instance.DoanhThu(start, end);
+            return data;
+        }
     }
 }

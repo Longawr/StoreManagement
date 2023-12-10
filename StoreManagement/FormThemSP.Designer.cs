@@ -42,12 +42,16 @@
             this.lblSoLuong = new System.Windows.Forms.Label();
             this.lblTenSP = new System.Windows.Forms.Label();
             this.lblMaSP = new System.Windows.Forms.Label();
+            this.tbxGiaNhap = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbxInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAnhSp)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxInfo
             // 
+            this.gbxInfo.Controls.Add(this.tbxGiaNhap);
+            this.gbxInfo.Controls.Add(this.label2);
             this.gbxInfo.Controls.Add(this.cbxPhanLoai);
             this.gbxInfo.Controls.Add(this.btnChonAnh);
             this.gbxInfo.Controls.Add(this.pbxAnhSp);
@@ -64,7 +68,7 @@
             this.gbxInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxInfo.Location = new System.Drawing.Point(0, 0);
             this.gbxInfo.Name = "gbxInfo";
-            this.gbxInfo.Size = new System.Drawing.Size(800, 544);
+            this.gbxInfo.Size = new System.Drawing.Size(800, 565);
             this.gbxInfo.TabIndex = 2;
             this.gbxInfo.TabStop = false;
             this.gbxInfo.Text = "Thông tin sản phẩm";
@@ -79,7 +83,6 @@
             // 
             // btnChonAnh
             // 
-            this.btnChonAnh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChonAnh.AutoSize = true;
             this.btnChonAnh.Location = new System.Drawing.Point(505, 195);
             this.btnChonAnh.Name = "btnChonAnh";
@@ -91,8 +94,6 @@
             // 
             // pbxAnhSp
             // 
-            this.pbxAnhSp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbxAnhSp.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbxAnhSp.Location = new System.Drawing.Point(299, 25);
             this.pbxAnhSp.Name = "pbxAnhSp";
@@ -103,17 +104,13 @@
             // 
             // tbxGiaTien
             // 
-            this.tbxGiaTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxGiaTien.Location = new System.Drawing.Point(134, 450);
+            this.tbxGiaTien.Location = new System.Drawing.Point(134, 484);
             this.tbxGiaTien.Name = "tbxGiaTien";
             this.tbxGiaTien.Size = new System.Drawing.Size(660, 26);
             this.tbxGiaTien.TabIndex = 11;
             // 
             // tbxSoLuong
             // 
-            this.tbxSoLuong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxSoLuong.Location = new System.Drawing.Point(134, 346);
             this.tbxSoLuong.Name = "tbxSoLuong";
             this.tbxSoLuong.Size = new System.Drawing.Size(660, 26);
@@ -121,9 +118,8 @@
             // 
             // btnThem
             // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.AutoSize = true;
-            this.btnThem.Location = new System.Drawing.Point(364, 502);
+            this.btnThem.Location = new System.Drawing.Point(359, 527);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 30);
             this.btnThem.TabIndex = 3;
@@ -133,8 +129,6 @@
             // 
             // tbxTenSP
             // 
-            this.tbxTenSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxTenSP.Location = new System.Drawing.Point(134, 294);
             this.tbxTenSP.Name = "tbxTenSP";
             this.tbxTenSP.Size = new System.Drawing.Size(660, 26);
@@ -142,8 +136,6 @@
             // 
             // tbxMaSP
             // 
-            this.tbxMaSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxMaSP.Location = new System.Drawing.Point(134, 248);
             this.tbxMaSP.Name = "tbxMaSP";
             this.tbxMaSP.ReadOnly = true;
@@ -152,8 +144,6 @@
             // 
             // lblPhanLoai
             // 
-            this.lblPhanLoai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPhanLoai.AutoSize = true;
             this.lblPhanLoai.Location = new System.Drawing.Point(6, 404);
             this.lblPhanLoai.Name = "lblPhanLoai";
@@ -163,10 +153,8 @@
             // 
             // lblGia
             // 
-            this.lblGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGia.AutoSize = true;
-            this.lblGia.Location = new System.Drawing.Point(8, 456);
+            this.lblGia.Location = new System.Drawing.Point(8, 490);
             this.lblGia.Name = "lblGia";
             this.lblGia.Size = new System.Drawing.Size(68, 20);
             this.lblGia.TabIndex = 3;
@@ -174,8 +162,6 @@
             // 
             // lblSoLuong
             // 
-            this.lblSoLuong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSoLuong.AutoSize = true;
             this.lblSoLuong.Location = new System.Drawing.Point(8, 352);
             this.lblSoLuong.Name = "lblSoLuong";
@@ -185,8 +171,6 @@
             // 
             // lblTenSP
             // 
-            this.lblTenSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTenSP.AutoSize = true;
             this.lblTenSP.Location = new System.Drawing.Point(2, 300);
             this.lblTenSP.Name = "lblTenSP";
@@ -196,8 +180,6 @@
             // 
             // lblMaSP
             // 
-            this.lblMaSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaSP.AutoSize = true;
             this.lblMaSP.Location = new System.Drawing.Point(6, 248);
             this.lblMaSP.Name = "lblMaSP";
@@ -205,11 +187,27 @@
             this.lblMaSP.TabIndex = 0;
             this.lblMaSP.Text = "Mã sản phẩm:";
             // 
+            // tbxGiaNhap
+            // 
+            this.tbxGiaNhap.Location = new System.Drawing.Point(134, 438);
+            this.tbxGiaNhap.Name = "tbxGiaNhap";
+            this.tbxGiaNhap.Size = new System.Drawing.Size(660, 26);
+            this.tbxGiaNhap.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 444);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Giá nhập:";
+            // 
             // FormThemSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 544);
+            this.ClientSize = new System.Drawing.Size(800, 565);
             this.Controls.Add(this.gbxInfo);
             this.Name = "FormThemSP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -238,5 +236,7 @@
         private System.Windows.Forms.Label lblMaSP;
         private System.Windows.Forms.Button btnChonAnh;
         private System.Windows.Forms.ComboBox cbxPhanLoai;
+        private System.Windows.Forms.TextBox tbxGiaNhap;
+        private System.Windows.Forms.Label label2;
     }
 }

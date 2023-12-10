@@ -40,6 +40,11 @@ namespace StoreManagement.BUS
             return SanPhamDAO.Instance.XoaSanPham(MaSanPham);
         }
 
+        public bool NhapHang(int TonKho, int SoLuongNhap, string MaSP)
+        {
+            return SanPhamDAO.Instance.NhapHang(TonKho, SoLuongNhap, MaSP);
+        }
+
         public string idGenerate(string prefix)
         {
             int maxRow = SanPhamDAO.Instance.idGenerate();

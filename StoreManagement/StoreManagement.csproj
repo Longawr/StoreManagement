@@ -175,6 +175,7 @@
     <Compile Include="FormThemSP.Designer.cs">
       <DependentUpon>FormThemSP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\PhanTrang.cs" />
     <EmbeddedResource Include="FormApplication.resx">
       <DependentUpon>FormApplication.cs</DependentUpon>
     </EmbeddedResource>

@@ -23,15 +23,28 @@ namespace StoreManagement.BUS
             return TaiKhoanDAO.Instance.LoginMethod(username, password);
         }
 
-        internal void DoiMatKhau(string mkCu, string mkMoi, string xacNhanMK)
+        internal string[] DoiMatKhau(string mkCu, string mkMoi, string xacNhanMK)
         {
+            string[] arr = new string[2];
+            arr[0] = "error";
             if (mkMoi.Equals(xacNhanMK))
             {
             string maNV = NhanVienBUS.currentNhanVien.MaNhanVien;
             int result = TaiKhoanDAO.Instance.DoiMK(maNV, mkCu, mkMoi);
-                if (result <= 0) { throw new Exception("Mật khẩu hoặc tài khoản không đúng"); }
+                if (result <= 0) 
+                {
+                    arr[1] = "Mật khẩu hoặc tài khoản không đúng";
+                    return arr; 
+                }
+                arr[0] = "success";
+                arr[1] = "Đổi mật khẩu thành công";
+                return arr;
             }
-            else { throw new Exception("Xác nhận mật khẩu không trùng với mật khẩu mới"); }
+            else 
+            {
+                arr[1] = "Xác nhận mật khẩu không trùng với mật khẩu mới";
+                return arr; 
+            }
         }
     }
 }
