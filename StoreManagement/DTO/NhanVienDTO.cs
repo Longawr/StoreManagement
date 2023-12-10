@@ -3,27 +3,28 @@
     class NhanVienDTO
     {
         private byte[] anhNhanVien;
+        private string maNhanVien;
+        private string tenNhanVien;
+        private string sdt;
+
         public byte[] AnhNhanVien
         {
             get { return anhNhanVien; }
             set { anhNhanVien = value; }
         }
 
-        private string maNhanVien;
         public string MaNhanVien
         {
             get { return maNhanVien; }
             set { maNhanVien = value; }
         }
 
-        private string tenNhanVien;
         public string TenNhanVien
         {
             get { return tenNhanVien; }
             set { tenNhanVien = value; }
         }
 
-        private string sdt;
         public string Sdt
         {
             get { return sdt; }

@@ -38,5 +38,22 @@ namespace StoreManagement.DAO
             object[] parameter = { tenNV, sdt, maNV };
             return DataProvider.Instance.ExecuteNonQuery(query, parameter);
         }
+
+        internal int ThemNV(byte[] anhNV, string maNV, string tenNV, string sdt)
+        {
+            string query = "insert into NhanVien(AnhNV, MaNhanVien, TenNV, Sdt)"
+                           + " values( @anhVN , @maNV , @tenNV , @sdt )";
+            object[] parameter = { anhNV, maNV, tenNV, sdt };
+            int result = DataProvider.Instance.ExecuteNonQuery(query, parameter);
+            return result;
+        }
+
+        internal int XoaNV(string maNV)
+        {
+            string query = "delete from NhanVien where MaNhanVien = @maNV";
+            object[] parameter = { maNV };
+            int result = DataProvider.Instance.ExecuteNonQuery(query, parameter);
+            return result;
+        }
     }
 }

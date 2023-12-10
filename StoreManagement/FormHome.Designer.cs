@@ -93,9 +93,9 @@
             this.flowLayoutPanel.Controls.Add(this.btnThanhToan);
             this.flowLayoutPanel.Controls.Add(this.btnSanPham);
             this.flowLayoutPanel.Controls.Add(this.btnPhanloai);
-            this.flowLayoutPanel.Controls.Add(this.btnThongKe);
-            this.flowLayoutPanel.Controls.Add(this.btnDSHoaDon);
             this.flowLayoutPanel.Controls.Add(this.btnKhachHang);
+            this.flowLayoutPanel.Controls.Add(this.btnDSHoaDon);
+            this.flowLayoutPanel.Controls.Add(this.btnThongKe);
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
@@ -220,7 +220,7 @@
             this.btnThongKe.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThongKe.Location = new System.Drawing.Point(3, 328);
+            this.btnThongKe.Location = new System.Drawing.Point(3, 416);
             this.btnThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(178, 40);
@@ -248,7 +248,7 @@
             this.btnKhachHang.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachHang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnKhachHang.Location = new System.Drawing.Point(3, 416);
+            this.btnKhachHang.Location = new System.Drawing.Point(3, 328);
             this.btnKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(178, 40);
