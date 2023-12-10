@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Windows.Forms;
 
-namespace StoreManagement.Functions
+namespace StoreManagement.Utils
 {
     class DataProvider
     {
         private static DataProvider instance;
-       
+
         public static DataProvider Instance
         {
             get
@@ -62,10 +60,12 @@ namespace StoreManagement.Functions
                     throw ex;
                     //MessageBox.Show("Error: " + ex.Message);
                 }
-                
+
                 return data;
             }
         }
+
+        //non return query such as update and delete
         public int ExecuteNonQuery(string query, object[] parameters = null)
         {
             int rowsAffected = 0;
@@ -75,7 +75,7 @@ namespace StoreManagement.Functions
                 try
                 {
                     conn.Open();
-                    
+
                     if (parameters != null)
                     {
                         string[] temp = query.Split(' ');
@@ -100,10 +100,12 @@ namespace StoreManagement.Functions
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
-                
+
                 return rowsAffected;
             }
         }
+
+        //
         public bool ExecuteScalar(string query, object[] parameters = null)
         {
             bool result = false;
@@ -144,14 +146,14 @@ namespace StoreManagement.Functions
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
-                
+
                 return result;
             }
         }
 
-       
-          
-        
-        
+
+
+
+
     }
 }

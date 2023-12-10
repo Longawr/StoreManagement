@@ -1,9 +1,6 @@
 ﻿using StoreManagement.DAO;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StoreManagement.BUS
 {
@@ -21,9 +18,20 @@ namespace StoreManagement.BUS
         }
         public TaiKhoanBUS() { }
 
-        public bool LoginMethod(string username, string password) 
+        public bool LoginMethod(string username, string password)
         {
             return TaiKhoanDAO.Instance.LoginMethod(username, password);
+        }
+
+        internal void DoiMatKhau(string mkCu, string mkMoi, string xacNhanMK)
+        {
+            if (mkMoi.Equals(xacNhanMK))
+            {
+            string maNV = NhanVienBUS.currentNhanVien.MaNhanVien;
+            int result = TaiKhoanDAO.Instance.DoiMK(maNV, mkCu, mkMoi);
+                if (result <= 0) { throw new Exception("Mật khẩu hoặc tài khoản không đúng"); }
+            }
+            else { throw new Exception("Xác nhận mật khẩu không trùng với mật khẩu mới"); }
         }
     }
 }

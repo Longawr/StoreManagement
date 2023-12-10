@@ -25,7 +25,7 @@ namespace StoreManagement.BUS
             Dgv.DataSource = SanPhamDAO.Instance.TimKiemSanPham(tenSanPham);
         }
 
-        public bool ThemSanPham(SanPhamDTO sanPham) 
+        public bool ThemSanPham(SanPhamDTO sanPham)
         {
             return SanPhamDAO.Instance.ThemSanPham(sanPham);
         }

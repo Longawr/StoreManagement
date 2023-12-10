@@ -1,14 +1,8 @@
 ﻿using StoreManagement.BUS;
 using StoreManagement.DAO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StoreManagement
@@ -137,7 +131,7 @@ namespace StoreManagement
             e.Graphics.DrawString("Xin cảm ơn quý khách!", new Font("Microsoft Sans Serif",
             14, FontStyle.Bold), Brushes.Black, new Point(300, y));
 
-            
+
         }
 
         private void dgvCTHD_CellContentClick(object sender, DataGridViewCellEventArgs e)

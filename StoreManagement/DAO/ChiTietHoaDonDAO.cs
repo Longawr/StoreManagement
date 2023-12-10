@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StoreManagement.Utils;
 using System.Data;
-using StoreManagement.Functions;
 
 namespace StoreManagement.DAO
 {
@@ -22,7 +17,7 @@ namespace StoreManagement.DAO
             }
         }
 
-        public DataTable ChiTietHoaDon() 
+        public DataTable ChiTietHoaDon()
         {
             string query = "select MaHoaDon as 'Mã hóa đơn'," +
                 "TenSanPham as 'Tên sản phẩm'," +

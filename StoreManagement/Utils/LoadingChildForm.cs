@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StoreManagement.Functions
+namespace StoreManagement.Utils
 {
     class LoadingChildForm
     {
@@ -21,13 +17,17 @@ namespace StoreManagement.Functions
             }
         }
 
-        public void OpenChildForm(object Form,Panel pnl)
+        public void OpenChildForm(object Form, Panel pnl)
         {
             if (pnl.Controls.Count > 0)
             {
-                // Dong childform hien tai
-                Form CurrentChildForm = pnl.Controls[0] as Form;
-                CurrentChildForm.Close();
+                foreach (Control control in pnl.Controls)
+                {
+                    if (control is Form form)
+                    {
+                        form.Close();
+                    }
+                }
             }
 
             Form NewChildForm = Form as Form;

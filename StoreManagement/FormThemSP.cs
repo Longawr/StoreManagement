@@ -1,7 +1,7 @@
 ﻿using StoreManagement.BUS;
 using StoreManagement.DAO;
 using StoreManagement.DTO;
-using StoreManagement.Functions;
+using StoreManagement.Utils;
 using System;
 using System.Windows.Forms;
 
@@ -54,7 +54,7 @@ namespace StoreManagement
             try
             {
                 GetValue();
-                if(SanPhamBUS.Instance.ThemSanPham(sanPham) == true)
+                if (SanPhamBUS.Instance.ThemSanPham(sanPham) == true)
                 {
                     MessageBox.Show("Thêm thành công");
                 }
@@ -64,7 +64,7 @@ namespace StoreManagement
                 }
                 Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //throw ex;
                 MessageBox.Show("Lỗi thêm: " + ex);

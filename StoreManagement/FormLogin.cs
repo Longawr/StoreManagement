@@ -1,13 +1,8 @@
 ﻿using StoreManagement.BUS;
-using StoreManagement.DAO;
+using StoreManagement.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace StoreManagement
@@ -22,16 +17,29 @@ namespace StoreManagement
         private const string defaultUsernameText = " Username";
         private const string defaultPasswordText = " Password";
 
+        private void changeHomeForm(string taiKhoan)
+        {
+            Form parent = Parent.Parent as Form;
+            parent.Size = new Size(1200, 600);
+            parent.Location = new Point(
+                (Screen.PrimaryScreen.Bounds.Size.Width / 2) - (parent.Size.Width / 2),
+                (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (parent.Size.Height / 2)
+            );
+
+            NhanVienBUS.Instance.SetCurrentNhanVien(taiKhoan);
+            LoadingChildForm.Instance.OpenChildForm(new FormHome(), Parent as Panel);
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            hidebtn.Tag = "hide.ico";
+        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FormHome home = new FormHome();
             if (testCbx.Checked)
             {
-                NhanVienBUS.Instance.GetNhanVien("testing");
-                Hide();
-                home.ShowDialog();
-                Close();
+                changeHomeForm("test");
                 return;
             }
             if (tbxTaiKhoan.Text == defaultUsernameText || tbxMatKhau.Text == defaultPasswordText)
@@ -55,10 +63,7 @@ namespace StoreManagement
             {
                 if (TaiKhoanBUS.Instance.LoginMethod(tbxTaiKhoan.Text, tbxMatKhau.Text) == true)
                 {
-                    NhanVienBUS.Instance.GetNhanVien(tbxTaiKhoan.Text);
-                    Hide();
-                    home.ShowDialog();
-                    Close();
+                    changeHomeForm(tbxTaiKhoan.Text);
                 }
                 else
                 {
@@ -70,6 +75,14 @@ namespace StoreManagement
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void hidebtn_Click(object sender, EventArgs e)
+        {
+            hidebtn.Image.Dispose();
+            hidebtn.Tag = (string)hidebtn.Tag == "hide.ico" ? "show.ico" : "hide.ico";
+            hidebtn.Image = (string)hidebtn.Tag == "hide.ico" ?  Properties.Resources.hide : Properties.Resources.show;
+            tbxMatKhau.UseSystemPasswordChar = !tbxMatKhau.UseSystemPasswordChar;
         }
     }
 }

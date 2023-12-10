@@ -1,11 +1,5 @@
-﻿using StoreManagement.Functions;
-using System;
-using System.Collections.Generic;
+﻿using StoreManagement.Utils;
 using System.Data;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StoreManagement.DAO
 {
@@ -24,16 +18,25 @@ namespace StoreManagement.DAO
         }
         public NhanVienDAO() { }
 
-        public DataTable GetNhanVien(string TaiKhoan)
+        public DataTable GetNhanVienById(string MaNhanVien)
         {
-            string query = "select AnhNV as 'Ảnh nhân viên' ," +
-                "NhanVien.MaNhanVien as 'Mã nhân viên' ," +
-                "TenNV as 'Tên nhân viên' , " +
-                "sdt as 'SĐT' from NhanVien " +
-                "inner join TaiKhoan on NhanVien.MaNhanVien = TaiKhoan.MaNhanVien " +
-                "where TaiKhoan.TaiKhoan = @TaiKhoan";
-            object[] parameter = { TaiKhoan };
+
+            string query =  "select nv.AnhNV, nv.MaNhanVien, tk.TaiKhoan, nv.TenNV, nv.Sdt"
+                            + " from NhanVien as nv"
+                            + " inner join TaiKhoan as tk"
+                            + " on nv.MaNhanVien = tk.MaNhanVien"
+                            + " where nv.MaNhanVien = @MaNhanVien";
+            object[] parameter = { MaNhanVien };
             return DataProvider.Instance.ExecuteQuery(query, parameter);
+        }
+
+        public int SuaNhanVien(string maNV, string tenNV, string sdt)
+        {
+
+            string query = "update NhanVien set tenNV = @tenNV ," +
+                " sdt = @sdt where maNhanVien = @maNV";
+            object[] parameter = { tenNV, sdt, maNV };
+            return DataProvider.Instance.ExecuteNonQuery(query, parameter);
         }
     }
 }

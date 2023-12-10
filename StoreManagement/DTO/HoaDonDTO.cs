@@ -44,7 +44,7 @@ namespace StoreManagement.DTO
         }
 
 
-        public HoaDonDTO(string maHoaDon, string maNhanVien, DateTime ngayBan,  string maKH, float tongTien)
+        public HoaDonDTO(string maHoaDon, string maNhanVien, DateTime ngayBan, string maKH, float tongTien)
         {
             this.maHoaDon = maHoaDon;
             this.maNhanVien = maNhanVien;

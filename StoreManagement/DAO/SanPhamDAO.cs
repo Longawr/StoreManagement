@@ -1,7 +1,7 @@
-﻿using System.Data.SqlClient;
+﻿using StoreManagement.DTO;
+using StoreManagement.Utils;
 using System.Data;
-using StoreManagement.DTO;
-using StoreManagement.Functions;
+using System.Data.SqlClient;
 
 namespace StoreManagement.DAO
 {
@@ -9,7 +9,7 @@ namespace StoreManagement.DAO
     {
         private static SanPhamDAO instance;
 
-        public static SanPhamDAO Instance 
+        public static SanPhamDAO Instance
         {
             get
             {
@@ -83,7 +83,7 @@ namespace StoreManagement.DAO
             string query = "delete SanPham where MaSanPham = @MaSanPham";
             object[] parameter = { MaSanPham };
             bool result = false;
-            if (DataProvider.Instance.ExecuteNonQuery(query,parameter) > 0)
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameter) > 0)
             {
                 result = true;
             }

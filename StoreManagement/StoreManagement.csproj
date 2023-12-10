@@ -65,6 +65,7 @@
     <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DAO\ThanhToanDAO.cs" />
     <Compile Include="DAO\ThongKeDAO.cs" />
+    <Compile Include="DTO\CurrentNhanVienDTO.cs" />
     <Compile Include="DTO\HoaDonDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
@@ -72,11 +73,23 @@
     <Compile Include="DTO\SanPhamDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="DTO\ThanhToanDTO.cs" />
+    <Compile Include="FormApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormApplication.Designer.cs">
+      <DependentUpon>FormApplication.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCTHD.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCTHD.Designer.cs">
       <DependentUpon>FormCTHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoiMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoiMK.Designer.cs">
+      <DependentUpon>FormDoiMK.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDSHoaDon.cs">
       <SubType>Form</SubType>
@@ -138,16 +151,22 @@
     <Compile Include="FormThongKe.Designer.cs">
       <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThongTinTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongTinTK.Designer.cs">
+      <DependentUpon>FormThongTinTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTTHD.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTTHD.Designer.cs">
       <DependentUpon>FormTTHD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Functions\Connection.cs" />
-    <Compile Include="Functions\DataProvider.cs" />
-    <Compile Include="Functions\ImageProcessing.cs" />
-    <Compile Include="Functions\LoadingChildForm.cs" />
+    <Compile Include="Utils\Connection.cs" />
+    <Compile Include="Utils\DataProvider.cs" />
+    <Compile Include="Utils\ImageProcessing.cs" />
+    <Compile Include="Utils\LoadingChildForm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormThemSP.cs">
@@ -156,8 +175,14 @@
     <Compile Include="FormThemSP.Designer.cs">
       <DependentUpon>FormThemSP.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormApplication.resx">
+      <DependentUpon>FormApplication.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCTHD.resx">
       <DependentUpon>FormCTHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDoiMK.resx">
+      <DependentUpon>FormDoiMK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDSHoaDon.resx">
       <DependentUpon>FormDSHoaDon.cs</DependentUpon>
@@ -188,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThongKe.resx">
       <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongTinTK.resx">
+      <DependentUpon>FormThongTinTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTTHD.resx">
       <DependentUpon>FormTTHD.cs</DependentUpon>
@@ -249,6 +277,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\OIP-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\show.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

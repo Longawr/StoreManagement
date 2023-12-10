@@ -1,11 +1,6 @@
 ﻿using StoreManagement.DTO;
-using StoreManagement.Functions;
-using System;
-using System.Collections.Generic;
+using StoreManagement.Utils;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StoreManagement.DAO
 {
@@ -22,7 +17,7 @@ namespace StoreManagement.DAO
                 return instance;
             }
         }
-        public PhanLoaiDAO () { }
+        public PhanLoaiDAO() { }
         public DataTable DSPhanLoai()
         {
             string query = "select MaLoai as 'Mã loại' , TenLoai as 'Tên loại' from PhanLoai";

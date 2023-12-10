@@ -1,12 +1,6 @@
 ﻿using StoreManagement.DTO;
-using StoreManagement.Functions;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using StoreManagement.Utils;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StoreManagement.DAO
 {
@@ -73,7 +67,7 @@ namespace StoreManagement.DAO
             bool result = false;
             string query = "update SanPham set SoLuong = SoLuong - @SoLuong where MaSanPham = @MaSanPham ";
             object[] parameters = { soLuong, maSanPham };
-            if(DataProvider.Instance.ExecuteNonQuery(query,parameters) > 0)
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0)
             {
                 result = true;
             }

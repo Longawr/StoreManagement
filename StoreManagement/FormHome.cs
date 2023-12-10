@@ -1,19 +1,15 @@
 ﻿using StoreManagement.BUS;
-using StoreManagement.Functions;
+using StoreManagement.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StoreManagement
 {
     public partial class FormHome : Form
     {
+        bool sidebarExpand = false;
+
         public FormHome()
         {
             InitializeComponent();
@@ -23,11 +19,15 @@ namespace StoreManagement
         {
             if (NhanVienBUS.currentNhanVien != null)
             {
-                lblTenNV.Text = NhanVienBUS.currentNhanVien.TenNhanVien.ToString();
+                btnTenNV.Text = "Chào, " + NhanVienBUS.currentNhanVien.TenNhanVien.ToString();
             }
             else
             {
-                lblTenNV.Text = "N/A";
+                btnTenNV.Text = "Chào, N/A";
+            }
+            if(NhanVienBUS.currentNhanVien?.VaiTro == "nv")
+            {
+
             }
         }
 
@@ -67,17 +67,56 @@ namespace StoreManagement
             lblTittle.Text = "Thống Kê";
         }
 
-        private void lblTenNV_Click(object sender, EventArgs e)
+        private void btnTenNV_Click(object sender, EventArgs e)
         {
-
+            timerSildeAnimation.Start();
         }
 
-        private void FormHome_FormClosing(object sender, FormClosingEventArgs e)
+        private void timerSildeAnimation_Tick(object sender, EventArgs e)
         {
-                if (MessageBox.Show("Are you sure you want to quit?", "My Application", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (sidebarExpand)
+            {
+                panelTaiKhoan.Height -= 10;
+                if (panelTaiKhoan.Height == panelTaiKhoan.MinimumSize.Height)
                 {
-                    e.Cancel = true;
+                    sidebarExpand = false;
+                    timerSildeAnimation.Stop();
                 }
+            }
+            else
+            {
+                panelTaiKhoan.Height += 10;
+                if (panelTaiKhoan.Height == panelTaiKhoan.MaximumSize.Height)
+                {
+                    sidebarExpand = true;
+                    timerSildeAnimation.Stop();
+                }
+            }
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this,
+                        "Are you sure you want to logout?",
+                        "Closing Form",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Question) == DialogResult.OK)
+            {
+
+                Form parent = Parent.Parent as Form;
+                parent.Size = new Size(800, 400);
+                parent.Location = new Point(
+                    (Screen.PrimaryScreen.Bounds.Size.Width / 2) - (parent.Size.Width / 2),
+                    (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (parent.Size.Height / 2)
+                );
+                LoadingChildForm.Instance.OpenChildForm(new FormLogin(), Parent as Panel);
+            }
+        }
+
+        private void btnThongTin_Click(object sender, EventArgs e)
+        {
+
+                LoadingChildForm.Instance.OpenChildForm(new FormThongTinTK(), pnlForm);
         }
     }
 }

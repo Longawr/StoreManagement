@@ -2,13 +2,6 @@
 using StoreManagement.DAO;
 using StoreManagement.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StoreManagement
@@ -64,7 +57,7 @@ namespace StoreManagement
             try
             {
                 string id = dgvKH.SelectedCells[0].OwningRow.Cells["Mã khách hàng"].Value.ToString();
-                if(KhachHangBUS.Instance.ExistInHoaDon(id) == false)
+                if (KhachHangBUS.Instance.ExistInHoaDon(id) == false)
                 {
                     if (KhachHangBUS.Instance.XoaKH(id) == true)
                     {

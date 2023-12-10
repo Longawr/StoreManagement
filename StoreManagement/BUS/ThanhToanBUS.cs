@@ -1,11 +1,5 @@
 ﻿using StoreManagement.DAO;
 using StoreManagement.DTO;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StoreManagement.BUS
@@ -38,7 +32,7 @@ namespace StoreManagement.BUS
         public string idGenerate(string prefix)
         {
             int maxRow = ThanhToanDAO.Instance.IdGenerate();
-            
+
             string id = prefix + maxRow;
             return id;
         }
@@ -54,7 +48,7 @@ namespace StoreManagement.BUS
             }
             return result;
         }
-        
+
         public bool UpdateSoLuong(int soLuong, string maSanPham)
         {
             return ThanhToanDAO.Instance.UpdateSoLuong(soLuong, maSanPham);

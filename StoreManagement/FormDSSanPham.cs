@@ -1,11 +1,11 @@
 ﻿using StoreManagement.BUS;
 using StoreManagement.DAO;
 using StoreManagement.DTO;
-using StoreManagement.Functions;
+using StoreManagement.Utils;
 using System;
 using System.ComponentModel;
-using System.Windows.Forms;
 using System.Data;
+using System.Windows.Forms;
 
 namespace StoreManagement
 {
@@ -25,7 +25,7 @@ namespace StoreManagement
         }
         private void FormDSSanPham_Load(object sender, EventArgs e)
         {
-            
+
             //Dgv
             dgvSanPham.DataSource = SanPhamDAO.Instance.DSSanPham();
             dgvSanPham.Columns["Ảnh"].ReadOnly = true;
@@ -52,8 +52,7 @@ namespace StoreManagement
             cbxTimPL.ValueMember = cbxPhanLoai.ValueMember = "Mã loại";
 
             //Xu ly hien thi hinh anh
-            DataGridViewImageColumn img = new DataGridViewImageColumn();
-            img = (DataGridViewImageColumn)dgvSanPham.Columns[0];
+            DataGridViewImageColumn img = (DataGridViewImageColumn)dgvSanPham.Columns[0];
             img.ImageLayout = DataGridViewImageCellLayout.Zoom;
 
             //GroupBox Info
@@ -62,7 +61,7 @@ namespace StoreManagement
             clearInfo();
         }
 
-        
+
         private void DisplayDataOnCurrentPage()
         {
             // Lấy dữ liệu của trang hiện tại
@@ -149,7 +148,7 @@ namespace StoreManagement
         {
             SanPhamBUS.Instance.TimKiemSanPham(dgvSanPham, tbxTimKiem.Text);
         }
-        
+
         //Mo form ThemSP
         private void btnThem_Click(object sender, EventArgs e)
         {

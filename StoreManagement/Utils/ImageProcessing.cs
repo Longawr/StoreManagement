@@ -1,8 +1,8 @@
-﻿using System.IO;
+﻿using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
-using System.Drawing;
 
-namespace StoreManagement.Functions
+namespace StoreManagement.Utils
 {
     class ImageProcessing
     {
@@ -23,7 +23,7 @@ namespace StoreManagement.Functions
         public byte[] ImageToArray(PictureBox picture)
         {
             MemoryStream memory = new MemoryStream();
-            if(picture.Image != null)
+            if (picture.Image != null)
             {
                 picture.Image.Save(memory, picture.Image.RawFormat);
 

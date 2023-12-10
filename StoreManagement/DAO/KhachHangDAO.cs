@@ -1,7 +1,6 @@
 ﻿using StoreManagement.DTO;
-using StoreManagement.Functions;
+using StoreManagement.Utils;
 using System.Data;
-using System.Windows.Forms;
 
 namespace StoreManagement.DAO
 {
@@ -36,7 +35,7 @@ namespace StoreManagement.DAO
             return DataProvider.Instance.ExecuteQuery(query, parameter);
         }
 
-        
+
         public bool ThemKH(KhachHangDTO KH)
         {
             string query = "insert into KhachHang values ( @MaKH , @tenKH , @Sdt , @GhiChu )";
@@ -52,7 +51,7 @@ namespace StoreManagement.DAO
         public bool SuaKH(KhachHangDTO KH)
         {
             string query = "update KhachHang set TenKH = @TenKH , Sdt = @Sdt , GhiChu = @GhiChu where MaKH = @MaKH";
-            object[] parameters = { KH.TenKH, KH.Sdt, KH.GhiChu , KH.MaKH };
+            object[] parameters = { KH.TenKH, KH.Sdt, KH.GhiChu, KH.MaKH };
             bool result = false;
             if (DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0)
             {

@@ -30,7 +30,7 @@
             set { sdt = value; }
         }
 
-        public NhanVienDTO(byte[] anhNhanVien, string maNhanVien, string tenNhanVien, string sdt)
+        public NhanVienDTO(byte[] anhNhanVien, string maNhanVien, string tenNhanVien, string sdt )
         {
             this.anhNhanVien = anhNhanVien;
             this.maNhanVien = maNhanVien;

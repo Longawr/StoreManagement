@@ -1,12 +1,5 @@
-﻿using StoreManagement.BUS;
-using StoreManagement.Functions;
-using System;
-using System.Collections.Generic;
+﻿using StoreManagement.Utils;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace StoreManagement.DAO
 {

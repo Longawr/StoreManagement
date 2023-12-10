@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using StoreManagement.DTO;
+using StoreManagement.Utils;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using StoreManagement.DTO;
-using StoreManagement.Functions;
 
 namespace StoreManagement.DAO
 {
@@ -37,9 +31,9 @@ namespace StoreManagement.DAO
         public bool LuuHoaDon(HoaDonDTO hoaDon)
         {
             string query = "insert into HoaDon values ( @MaHoaDon , @NgayBan , @TongTien , @MaKH , @GhiChu )";
-            object[] parameters = { hoaDon.MaHoaDon, hoaDon.MaNhanVien , hoaDon.NgayBan, hoaDon.MaKH, hoaDon.TongTien };
+            object[] parameters = { hoaDon.MaHoaDon, hoaDon.MaNhanVien, hoaDon.NgayBan, hoaDon.MaKH, hoaDon.TongTien };
             bool result = false;
-            if (DataProvider.Instance.ExecuteNonQuery(query,parameters) > 0)
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0)
             {
                 result = true;
             }
@@ -52,7 +46,7 @@ namespace StoreManagement.DAO
                 "TenKH as 'Tên khách hàng', TongTien as 'Tổng tiền' " +
                 "from HoaDon inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH where MaHoaDon like @MaHoaDon";
             object[] parameter = { "%" + maHoaDon };
-            return DataProvider.Instance.ExecuteQuery(query,parameter);
+            return DataProvider.Instance.ExecuteQuery(query, parameter);
         }
     }
 }
