@@ -139,6 +139,12 @@
     <Compile Include="FormThemKH.Designer.cs">
       <DependentUpon>FormThemKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemNhanVien.Designer.cs">
+      <DependentUpon>FormThemNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThemPhanLoai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,12 @@
     </Compile>
     <Compile Include="FormTTHD.Designer.cs">
       <DependentUpon>FormTTHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDSNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDSNhanVien.Designer.cs">
+      <DependentUpon>FormDSNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Connection.cs" />
     <Compile Include="Utils\DataProvider.cs" />
@@ -233,6 +245,9 @@
     </Compile>
     <EmbeddedResource Include="FormThemSP.resx">
       <DependentUpon>FormThemSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDSNhanVien.resx">
+      <DependentUpon>FormDSNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

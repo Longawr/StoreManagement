@@ -33,6 +33,8 @@ namespace StoreManagement
             dgvSanPham.DataSource = dataTable;
             dgvSanPham.Columns["Mã sản phẩm"].Visible = false;
             dgvSanPham.Columns["Giảm giá"].Visible = false;
+            dgvSanPham.Columns["Số lượng nhập"].Visible = false;
+            dgvSanPham.Columns["Giá nhập"].Visible = false;
             DataGridViewImageColumn img = (DataGridViewImageColumn)dgvSanPham.Columns[0];
             img.ImageLayout = DataGridViewImageCellLayout.Zoom;
 

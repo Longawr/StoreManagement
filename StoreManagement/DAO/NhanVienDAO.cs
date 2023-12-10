@@ -1,4 +1,5 @@
-﻿using StoreManagement.Utils;
+﻿using StoreManagement.DTO;
+using StoreManagement.Utils;
 using System.Data;
 
 namespace StoreManagement.DAO
@@ -37,6 +38,48 @@ namespace StoreManagement.DAO
                 " sdt = @sdt where maNhanVien = @maNV";
             object[] parameter = { tenNV, sdt, maNV };
             return DataProvider.Instance.ExecuteNonQuery(query, parameter);
+        }
+
+      
+        public DataTable DSNhanVien()
+        {
+            string query = "select AnhNV as 'Ảnh' , " +
+                "NhanVien.MaNhanVien as 'Mã nhân viên' , TenNV as 'Tên nhân viên' , " +
+                "Sdt as 'Số điện thoại',TaiKhoan as 'Tài khoản' , " +
+                "MatKhau as 'Mật khẩu', VaiTro as 'Vai trò' from NhanVien " +
+                "inner join TaiKhoan on NhanVien.MaNhanVien = TaiKhoan.MaNhanVien ";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        
+        public bool ThemNhanVien(NhanVienDTO NV)
+        {
+            string query = "insert into NhanVien values ( @Anh , @MaNhanVien , @tenNhanVien , @Sdt )";
+            object[] parameters = { NV.AnhNhanVien, NV.MaNhanVien, NV.TenNhanVien, NV.Sdt };
+            bool result = false;
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0)
+            {
+                result = true;
+            }
+            return result;
+        }
+        public bool XoaNhanVien(string id)
+        {
+            string query = "Delete NhanVien where MaNhanVien = @MaNhanVien";
+            object[] parameter = { id };
+            bool result = false;
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameter) > 0)
+            {
+                result = true;
+            }
+            return result;
+        }
+
+        public int idGenerate()
+        {
+            string query = "select * from NhanVien";
+            int maxRow = DataProvider.Instance.ExecuteQuery(query).Rows.Count + 1;
+            return maxRow;
         }
     }
 }

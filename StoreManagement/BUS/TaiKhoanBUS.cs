@@ -1,4 +1,5 @@
 ﻿using StoreManagement.DAO;
+using StoreManagement.DTO;
 using System;
 using System.Windows.Forms;
 
@@ -46,5 +47,15 @@ namespace StoreManagement.BUS
                 return arr; 
             }
         }
+
+        public bool ThemTaiKhoan(TaiKhoanDTO acc)
+        {
+            return TaiKhoanDAO.Instance.ThemTaiKhoan(acc);
+        }
+        public bool XoaTaiKhoan(string maNhanVien)
+        {
+            return TaiKhoanDAO.Instance.XoaTaiKhoan(maNhanVien);
+        }
+
     }
 }

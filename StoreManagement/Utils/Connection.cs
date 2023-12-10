@@ -4,7 +4,7 @@ namespace StoreManagement.Utils
 {
     class Connection
     {
-        private static readonly string ConnectionString = @"Data Source=NGOCTRINH;Initial Catalog=StoreManagement;Integrated Security=True;TrustServerCertificate=True";
+        private static readonly string ConnectionString = @"Data Source=DESKTOP-DIIDZ\MAYDUY;Initial Catalog=StoreManagement;Integrated Security=True";
 
         public static SqlConnection Getconnection()
         {

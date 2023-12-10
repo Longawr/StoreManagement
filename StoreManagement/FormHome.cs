@@ -118,5 +118,11 @@ namespace StoreManagement
 
                 LoadingChildForm.Instance.OpenChildForm(new FormThongTinTK(), pnlForm);
         }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            LoadingChildForm.Instance.OpenChildForm(new FormDSNhanVien(), pnlForm);
+            lblTittle.Text = "Thông tin nhân viên";
+        }
     }
 }

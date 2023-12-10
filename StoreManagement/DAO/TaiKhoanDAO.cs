@@ -1,4 +1,5 @@
-﻿using StoreManagement.Utils;
+﻿using StoreManagement.DTO;
+using StoreManagement.Utils;
 using System;
 using System.Data;
 
@@ -32,7 +33,7 @@ namespace StoreManagement.DAO
                             + " from NhanVien as nv"
                             + " inner join TaiKhoan as tk"
                             + " on nv.MaNhanVien = tk.MaNhanVien"
-                            + " where tk.MaNhanVien = @TaiKhoan";
+                            + " where tk.TaiKhoan = @TaiKhoan";
             object[] parameters = { TaiKhoan };
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
@@ -44,6 +45,29 @@ namespace StoreManagement.DAO
             object[] parameter = { mkMoi, maNV, mkCu };
             int result = DataProvider.Instance.ExecuteNonQuery(query, parameter);
             Console.WriteLine(result);
+            return result;
+        }
+
+        public bool ThemTaiKhoan(TaiKhoanDTO acc)
+        {
+            string query = "insert into TaiKhoan values ( @taiKhoan , @maNhanVien , @matKhau , @vaiTro )";
+            object[] parameters = { acc.TaiKhoan, acc.MaNhanVien, acc.MatKhau, acc.VaiTro };
+            bool result = false;
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameters) > 0)
+            {
+                result = true;
+            }
+            return result;
+        }
+        public bool XoaTaiKhoan(string id)
+        {
+            string query = "Delete TaiKhoan where MaNhanVien = @MaNhanVien";
+            object[] parameter = { id };
+            bool result = false;
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameter) > 0)
+            {
+                result = true;
+            }
             return result;
         }
     }

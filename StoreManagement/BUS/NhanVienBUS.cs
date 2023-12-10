@@ -67,5 +67,25 @@ namespace StoreManagement.BUS
         {
             NhanVienDAO.Instance.SuaNhanVien(maNV, tenNV, sdt);
         }
+
+        public bool ThemNhanVien(NhanVienDTO NV)
+        {
+            return NhanVienDAO.Instance.ThemNhanVien(NV);
+        }
+        public bool XoaNhanVien(string maNhanVien)
+        {
+            return NhanVienDAO.Instance.XoaNhanVien(maNhanVien);
+        }
+        public void TimKiemNhanVien(DataGridView dgv, string maNhanVien)
+        {
+           dgv.DataSource = NhanVienDAO.Instance.GetNhanVienById(maNhanVien);
+        }
+
+        public string idGenerate(string prefix)
+        {
+            int maxRow = NhanVienDAO.Instance.idGenerate();
+            string id = prefix + maxRow;
+            return id;
+        }
     }
 }
