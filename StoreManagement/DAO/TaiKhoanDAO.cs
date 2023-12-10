@@ -44,7 +44,33 @@ namespace StoreManagement.DAO
                 " where MaNhanVien = @maNV and MatKhau = @mkCu ";
             object[] parameter = { mkMoi, maNV, mkCu };
             int result = DataProvider.Instance.ExecuteNonQuery(query, parameter);
-            Console.WriteLine(result);
+            return result;
+        }
+
+        public DataTable GetDSTaiKhoan()
+        {
+            string query = "select TaiKhoan as 'Tên tài khoản',"
+                                + " MaNhanVien as 'Mã nhân viên',"
+                                + " MatKhau as 'Mật khẩu' ,"
+                                + " VaiTro as 'Vai trò',"
+                        + " from TaiKhoan";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        internal int TaoTk(string tenTK, string maNV, string matkhau, string vaitro)
+        {
+            string query = "insert into TaiKhoan(TaiKhoan, MaNhanVien, MatKhau, VaiTro)"
+                            + " values( @tenTK , @maNV , @matkhau , @vaitro )";
+            object[] parameter = { tenTK, maNV, matkhau, vaitro };
+            int result = DataProvider.Instance.ExecuteNonQuery(query, parameter);
+            return result;
+        }
+
+        internal int XoaTK(string tenTK)
+        {
+            string query = "delete from TaiKhoan where TaiKhoan = @tenTK";
+            object[] parameter = { tenTK };
+            int result = DataProvider.Instance.ExecuteNonQuery(query, parameter);
             return result;
         }
 

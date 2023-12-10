@@ -27,7 +27,8 @@ namespace StoreManagement
             }
             if(NhanVienBUS.currentNhanVien?.VaiTro == "nv")
             {
-
+                btnThongKe.Visible = false;
+                btnThongKe.Enabled = false;
             }
         }
 
