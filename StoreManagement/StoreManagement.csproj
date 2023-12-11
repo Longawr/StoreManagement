@@ -221,6 +221,9 @@
     <EmbeddedResource Include="FormThemKH.resx">
       <DependentUpon>FormThemKH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormThemNhanVien.resx">
+      <DependentUpon>FormThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormThemPhanLoai.resx">
       <DependentUpon>FormThemPhanLoai.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +301,16 @@
     <None Include="Resources\hide.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\user.png" />
+    <None Include="Resources\user %281%29.png" />
+    <None Include="Resources\padlock %281%29.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\background.png" />
+    <None Include="Resources\hand.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\checklist.png" />
+    <None Include="Resources\background1.png" />
+    <None Include="Resources\search.png" />
     <Content Include="Resources\show.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

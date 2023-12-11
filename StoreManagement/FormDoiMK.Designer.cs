@@ -41,71 +41,80 @@ namespace StoreManagement
             // btnXacNhan
             // 
             this.btnXacNhan.AutoSize = true;
-            this.btnXacNhan.Location = new System.Drawing.Point(370, 207);
+            this.btnXacNhan.BackColor = System.Drawing.Color.IndianRed;
+            this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhan.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnXacNhan.Location = new System.Drawing.Point(416, 259);
             this.btnXacNhan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(80, 27);
+            this.btnXacNhan.Size = new System.Drawing.Size(109, 35);
             this.btnXacNhan.TabIndex = 32;
             this.btnXacNhan.Text = "Xác Nhận";
-            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.UseVisualStyleBackColor = false;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // tbxXacNhanMK
             // 
-            this.tbxXacNhanMK.Location = new System.Drawing.Point(177, 147);
+            this.tbxXacNhanMK.Location = new System.Drawing.Point(199, 184);
             this.tbxXacNhanMK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxXacNhanMK.Name = "tbxXacNhanMK";
-            this.tbxXacNhanMK.Size = new System.Drawing.Size(516, 22);
+            this.tbxXacNhanMK.Size = new System.Drawing.Size(580, 26);
             this.tbxXacNhanMK.TabIndex = 31;
             // 
             // tbxMatKhauMoi
             // 
-            this.tbxMatKhauMoi.Location = new System.Drawing.Point(177, 105);
+            this.tbxMatKhauMoi.Location = new System.Drawing.Point(199, 131);
             this.tbxMatKhauMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxMatKhauMoi.Name = "tbxMatKhauMoi";
-            this.tbxMatKhauMoi.Size = new System.Drawing.Size(516, 22);
+            this.tbxMatKhauMoi.Size = new System.Drawing.Size(580, 26);
             this.tbxMatKhauMoi.TabIndex = 30;
             // 
             // tbxMatKhauCu
             // 
-            this.tbxMatKhauCu.Location = new System.Drawing.Point(177, 68);
+            this.tbxMatKhauCu.Location = new System.Drawing.Point(199, 85);
             this.tbxMatKhauCu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxMatKhauCu.Name = "tbxMatKhauCu";
-            this.tbxMatKhauCu.Size = new System.Drawing.Size(516, 22);
+            this.tbxMatKhauCu.Size = new System.Drawing.Size(580, 26);
             this.tbxMatKhauCu.TabIndex = 29;
             // 
             // lblXacNhanMK
             // 
             this.lblXacNhanMK.AutoSize = true;
-            this.lblXacNhanMK.Location = new System.Drawing.Point(58, 150);
+            this.lblXacNhanMK.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXacNhanMK.Location = new System.Drawing.Point(65, 188);
             this.lblXacNhanMK.Name = "lblXacNhanMK";
-            this.lblXacNhanMK.Size = new System.Drawing.Size(94, 17);
+            this.lblXacNhanMK.Size = new System.Drawing.Size(114, 21);
             this.lblXacNhanMK.TabIndex = 27;
             this.lblXacNhanMK.Text = "Xác nhận mk:";
             // 
             // lblMatKhauMoi
             // 
             this.lblMatKhauMoi.AutoSize = true;
-            this.lblMatKhauMoi.Location = new System.Drawing.Point(60, 110);
+            this.lblMatKhauMoi.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatKhauMoi.Location = new System.Drawing.Point(68, 138);
             this.lblMatKhauMoi.Name = "lblMatKhauMoi";
-            this.lblMatKhauMoi.Size = new System.Drawing.Size(96, 17);
+            this.lblMatKhauMoi.Size = new System.Drawing.Size(117, 21);
             this.lblMatKhauMoi.TabIndex = 26;
             this.lblMatKhauMoi.Text = "Mật khẩu mới:";
             // 
             // lblMatkhauCu
             // 
             this.lblMatkhauCu.AutoSize = true;
-            this.lblMatkhauCu.Location = new System.Drawing.Point(63, 71);
+            this.lblMatkhauCu.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatkhauCu.Location = new System.Drawing.Point(71, 89);
             this.lblMatkhauCu.Name = "lblMatkhauCu";
-            this.lblMatkhauCu.Size = new System.Drawing.Size(89, 17);
+            this.lblMatkhauCu.Size = new System.Drawing.Size(110, 21);
             this.lblMatkhauCu.TabIndex = 25;
             this.lblMatkhauCu.Text = "Mật khẩu cũ:";
             // 
             // FormDoiMK
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 281);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackgroundImage = global::StoreManagement.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(846, 351);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.tbxXacNhanMK);
             this.Controls.Add(this.tbxMatKhauMoi);
@@ -113,6 +122,8 @@ namespace StoreManagement
             this.Controls.Add(this.lblXacNhanMK);
             this.Controls.Add(this.lblMatKhauMoi);
             this.Controls.Add(this.lblMatkhauCu);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormDoiMK";
             this.Text = "FormDoiMK";
             this.ResumeLayout(false);

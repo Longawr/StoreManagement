@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gbxInfo = new System.Windows.Forms.GroupBox();
+            this.tbxGiaNhap = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbxPhanLoai = new System.Windows.Forms.ComboBox();
             this.btnChonAnh = new System.Windows.Forms.Button();
             this.pbxAnhSp = new System.Windows.Forms.PictureBox();
@@ -42,14 +44,15 @@
             this.lblSoLuong = new System.Windows.Forms.Label();
             this.lblTenSP = new System.Windows.Forms.Label();
             this.lblMaSP = new System.Windows.Forms.Label();
-            this.tbxGiaNhap = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.gbxInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAnhSp)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxInfo
             // 
+            this.gbxInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gbxInfo.BackgroundImage = global::StoreManagement.Properties.Resources.background;
+            this.gbxInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.gbxInfo.Controls.Add(this.tbxGiaNhap);
             this.gbxInfo.Controls.Add(this.label2);
             this.gbxInfo.Controls.Add(this.cbxPhanLoai);
@@ -73,6 +76,23 @@
             this.gbxInfo.TabStop = false;
             this.gbxInfo.Text = "Thông tin sản phẩm";
             // 
+            // tbxGiaNhap
+            // 
+            this.tbxGiaNhap.Location = new System.Drawing.Point(134, 438);
+            this.tbxGiaNhap.Name = "tbxGiaNhap";
+            this.tbxGiaNhap.Size = new System.Drawing.Size(660, 26);
+            this.tbxGiaNhap.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 444);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 21);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Giá nhập:";
+            // 
             // cbxPhanLoai
             // 
             this.cbxPhanLoai.FormattingEnabled = true;
@@ -84,12 +104,15 @@
             // btnChonAnh
             // 
             this.btnChonAnh.AutoSize = true;
+            this.btnChonAnh.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnChonAnh.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonAnh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnChonAnh.Location = new System.Drawing.Point(505, 195);
             this.btnChonAnh.Name = "btnChonAnh";
-            this.btnChonAnh.Size = new System.Drawing.Size(88, 30);
+            this.btnChonAnh.Size = new System.Drawing.Size(108, 33);
             this.btnChonAnh.TabIndex = 13;
             this.btnChonAnh.Text = "Chọn ảnh";
-            this.btnChonAnh.UseVisualStyleBackColor = true;
+            this.btnChonAnh.UseVisualStyleBackColor = false;
             this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // pbxAnhSp
@@ -119,12 +142,15 @@
             // btnThem
             // 
             this.btnThem.AutoSize = true;
+            this.btnThem.BackColor = System.Drawing.Color.IndianRed;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnThem.Location = new System.Drawing.Point(359, 527);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 30);
+            this.btnThem.Size = new System.Drawing.Size(75, 35);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // tbxTenSP
@@ -145,63 +171,52 @@
             // lblPhanLoai
             // 
             this.lblPhanLoai.AutoSize = true;
+            this.lblPhanLoai.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhanLoai.Location = new System.Drawing.Point(6, 404);
             this.lblPhanLoai.Name = "lblPhanLoai";
-            this.lblPhanLoai.Size = new System.Drawing.Size(78, 20);
+            this.lblPhanLoai.Size = new System.Drawing.Size(83, 21);
             this.lblPhanLoai.TabIndex = 4;
             this.lblPhanLoai.Text = "Phân loại:";
             // 
             // lblGia
             // 
             this.lblGia.AutoSize = true;
+            this.lblGia.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGia.Location = new System.Drawing.Point(8, 490);
             this.lblGia.Name = "lblGia";
-            this.lblGia.Size = new System.Drawing.Size(68, 20);
+            this.lblGia.Size = new System.Drawing.Size(75, 21);
             this.lblGia.TabIndex = 3;
             this.lblGia.Text = "Giá tiền:";
             // 
             // lblSoLuong
             // 
             this.lblSoLuong.AutoSize = true;
+            this.lblSoLuong.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoLuong.Location = new System.Drawing.Point(8, 352);
             this.lblSoLuong.Name = "lblSoLuong";
-            this.lblSoLuong.Size = new System.Drawing.Size(76, 20);
+            this.lblSoLuong.Size = new System.Drawing.Size(77, 21);
             this.lblSoLuong.TabIndex = 2;
             this.lblSoLuong.Text = "Số lượng:";
             // 
             // lblTenSP
             // 
             this.lblTenSP.AutoSize = true;
+            this.lblTenSP.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenSP.Location = new System.Drawing.Point(2, 300);
             this.lblTenSP.Name = "lblTenSP";
-            this.lblTenSP.Size = new System.Drawing.Size(114, 20);
+            this.lblTenSP.Size = new System.Drawing.Size(120, 21);
             this.lblTenSP.TabIndex = 1;
             this.lblTenSP.Text = "Tên sản phẩm:";
             // 
             // lblMaSP
             // 
             this.lblMaSP.AutoSize = true;
+            this.lblMaSP.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaSP.Location = new System.Drawing.Point(6, 248);
             this.lblMaSP.Name = "lblMaSP";
-            this.lblMaSP.Size = new System.Drawing.Size(109, 20);
+            this.lblMaSP.Size = new System.Drawing.Size(118, 21);
             this.lblMaSP.TabIndex = 0;
             this.lblMaSP.Text = "Mã sản phẩm:";
-            // 
-            // tbxGiaNhap
-            // 
-            this.tbxGiaNhap.Location = new System.Drawing.Point(134, 438);
-            this.tbxGiaNhap.Name = "tbxGiaNhap";
-            this.tbxGiaNhap.Size = new System.Drawing.Size(660, 26);
-            this.tbxGiaNhap.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 444);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Giá nhập:";
             // 
             // FormThemSP
             // 

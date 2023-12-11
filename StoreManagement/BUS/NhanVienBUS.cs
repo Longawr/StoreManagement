@@ -31,6 +31,7 @@ namespace StoreManagement.BUS
 
         public void SetCurrentNhanVien(string TaiKhoan)
         {
+            
             DataTable data = TaiKhoanDAO.Instance.GetCurrentNhanVien(TaiKhoan);
             if (data.Rows.Count > 0)
             {

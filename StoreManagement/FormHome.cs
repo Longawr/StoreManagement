@@ -17,6 +17,7 @@ namespace StoreManagement
 
         private void FormHome_Load(object sender, EventArgs e)
         {
+            Console.WriteLine(NhanVienBUS.currentNhanVien.MaNhanVien);
             if (NhanVienBUS.currentNhanVien != null)
             {
                 btnTenNV.Text = "Chào, " + NhanVienBUS.currentNhanVien.TenNhanVien.ToString();
@@ -25,10 +26,17 @@ namespace StoreManagement
             {
                 btnTenNV.Text = "Chào, N/A";
             }
-            if(NhanVienBUS.currentNhanVien?.VaiTro == "nv")
+            if(NhanVienBUS.currentNhanVien?.VaiTro == "Nhân viên")
             {
                 btnThongKe.Visible = false;
                 btnThongKe.Enabled = false;
+                btnSanPham.Visible = false;
+                btnSanPham.Enabled = false;
+                btnPhanloai.Visible = false;
+                btnPhanloai.Enabled = false;
+                btnNhanVien.Visible = false;
+                btnNhanVien.Enabled = false;
+                
             }
         }
 
@@ -103,7 +111,7 @@ namespace StoreManagement
                         MessageBoxButtons.OKCancel,
                         MessageBoxIcon.Question) == DialogResult.OK)
             {
-
+                NhanVienBUS.currentNhanVien = null;
                 Form parent = Parent.Parent as Form;
                 parent.Size = new Size(800, 400);
                 parent.Location = new Point(

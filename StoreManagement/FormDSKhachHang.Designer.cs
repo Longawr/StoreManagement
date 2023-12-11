@@ -48,8 +48,8 @@
             // 
             // dgvKH
             // 
-            this.dgvKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -65,17 +65,20 @@
             // 
             this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSua.AutoSize = true;
-            this.btnSua.Location = new System.Drawing.Point(904, 540);
+            this.btnSua.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSua.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSua.Location = new System.Drawing.Point(888, 537);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 30);
+            this.btnSua.Size = new System.Drawing.Size(75, 33);
             this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // tbxTimKiem
             // 
-            this.tbxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxTimKiem.Location = new System.Drawing.Point(12, 540);
             this.tbxTimKiem.Name = "tbxTimKiem";
@@ -86,48 +89,60 @@
             // 
             this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTimKiem.AutoSize = true;
-            this.btnTimKiem.Location = new System.Drawing.Point(462, 540);
+            this.btnTimKiem.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnTimKiem.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTimKiem.Location = new System.Drawing.Point(444, 537);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(81, 30);
+            this.btnTimKiem.Size = new System.Drawing.Size(99, 33);
             this.btnTimKiem.TabIndex = 13;
             this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnThem
             // 
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.AutoSize = true;
-            this.btnThem.Location = new System.Drawing.Point(707, 540);
+            this.btnThem.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnThem.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnThem.Location = new System.Drawing.Point(707, 537);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 30);
+            this.btnThem.Size = new System.Drawing.Size(75, 33);
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnChonKH
             // 
             this.btnChonKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChonKH.AutoSize = true;
-            this.btnChonKH.Location = new System.Drawing.Point(583, 540);
+            this.btnChonKH.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnChonKH.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonKH.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnChonKH.Location = new System.Drawing.Point(583, 537);
             this.btnChonKH.Name = "btnChonKH";
-            this.btnChonKH.Size = new System.Drawing.Size(81, 30);
+            this.btnChonKH.Size = new System.Drawing.Size(81, 33);
             this.btnChonKH.TabIndex = 15;
             this.btnChonKH.Text = "Chọn";
-            this.btnChonKH.UseVisualStyleBackColor = true;
+            this.btnChonKH.UseVisualStyleBackColor = false;
             this.btnChonKH.Click += new System.EventHandler(this.btnChonKH_Click);
             // 
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.AutoSize = true;
-            this.btnRefresh.Location = new System.Drawing.Point(1002, 540);
+            this.btnRefresh.BackColor = System.Drawing.Color.Salmon;
+            this.btnRefresh.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRefresh.Location = new System.Drawing.Point(982, 537);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(79, 30);
+            this.btnRefresh.Size = new System.Drawing.Size(99, 33);
             this.btnRefresh.TabIndex = 29;
             this.btnRefresh.Text = "Làm mới";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click_1);
             // 
             // pnlPage
@@ -146,7 +161,9 @@
             // 
             // lblPageview
             // 
+            this.lblPageview.BackColor = System.Drawing.Color.Transparent;
             this.lblPageview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPageview.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageview.Location = new System.Drawing.Point(243, 23);
             this.lblPageview.Name = "lblPageview";
             this.lblPageview.Size = new System.Drawing.Size(84, 27);
@@ -156,7 +173,8 @@
             // 
             // btnEPg
             // 
-            this.btnEPg.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEPg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnEPg.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEPg.Location = new System.Drawing.Point(459, 22);
             this.btnEPg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEPg.Name = "btnEPg";
@@ -164,50 +182,55 @@
             this.btnEPg.Size = new System.Drawing.Size(59, 29);
             this.btnEPg.TabIndex = 3;
             this.btnEPg.Text = ">|";
-            this.btnEPg.UseVisualStyleBackColor = true;
+            this.btnEPg.UseVisualStyleBackColor = false;
             this.btnEPg.Click += new System.EventHandler(this.btnEPg_Click);
             // 
             // btnFwd
             // 
-            this.btnFwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnFwd.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFwd.Location = new System.Drawing.Point(366, 22);
             this.btnFwd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFwd.Name = "btnFwd";
             this.btnFwd.Size = new System.Drawing.Size(57, 29);
             this.btnFwd.TabIndex = 2;
             this.btnFwd.Text = ">>";
-            this.btnFwd.UseVisualStyleBackColor = true;
+            this.btnFwd.UseVisualStyleBackColor = false;
             this.btnFwd.Click += new System.EventHandler(this.btnFwd_Click);
             // 
             // btnBck
             // 
-            this.btnBck.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnBck.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBck.Location = new System.Drawing.Point(146, 20);
             this.btnBck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBck.Name = "btnBck";
             this.btnBck.Size = new System.Drawing.Size(52, 29);
             this.btnBck.TabIndex = 1;
             this.btnBck.Text = "<<";
-            this.btnBck.UseVisualStyleBackColor = true;
+            this.btnBck.UseVisualStyleBackColor = false;
             this.btnBck.Click += new System.EventHandler(this.btnBck_Click);
             // 
             // btnDauTrang
             // 
-            this.btnDauTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDauTrang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnDauTrang.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDauTrang.Location = new System.Drawing.Point(38, 21);
             this.btnDauTrang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDauTrang.Name = "btnDauTrang";
             this.btnDauTrang.Size = new System.Drawing.Size(60, 28);
             this.btnDauTrang.TabIndex = 0;
             this.btnDauTrang.Text = "|<";
-            this.btnDauTrang.UseVisualStyleBackColor = true;
+            this.btnDauTrang.UseVisualStyleBackColor = false;
             this.btnDauTrang.Click += new System.EventHandler(this.btnDauTrang_Click);
             // 
             // FormDSKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackgroundImage = global::StoreManagement.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1093, 594);
             this.Controls.Add(this.pnlPage);
             this.Controls.Add(this.btnRefresh);
@@ -217,6 +240,7 @@
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgvKH);
+            this.DoubleBuffered = true;
             this.Name = "FormDSKhachHang";
             this.Text = "FormDSKhachHang";
             this.Load += new System.EventHandler(this.FormDSKhachHang_Load);

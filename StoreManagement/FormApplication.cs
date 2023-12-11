@@ -1,5 +1,6 @@
 ﻿using StoreManagement.Utils;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace StoreManagement
@@ -14,6 +15,8 @@ namespace StoreManagement
 
         private void FormApplication_Load(object sender, EventArgs e)
         {
+
+            Thread.Sleep(10000);
             LoadingChildForm.Instance.OpenChildForm(new FormLogin(), panelMain);
         }
 

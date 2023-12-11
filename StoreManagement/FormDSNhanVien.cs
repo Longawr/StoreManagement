@@ -50,9 +50,9 @@ namespace StoreManagement
             try
             {
                 string id = dgvNhanVien.SelectedCells[0].OwningRow.Cells["Mã nhân viên"].Value.ToString();
-                if (NhanVienBUS.Instance.XoaNhanVien(id) == true)
+                if (TaiKhoanBUS.Instance.XoaTaiKhoan(id) == true)
                 {
-                    if (TaiKhoanBUS.Instance.XoaTaiKhoan(id) == true)
+                    if (NhanVienBUS.Instance.XoaNhanVien(id) == true)
                     {
                         MessageBox.Show("Xóa thành công");
                     }
@@ -87,6 +87,11 @@ namespace StoreManagement
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string maNhanVien = tbxTimKiem.Text.ToString();
+            if(maNhanVien == "")
+            {
+                MessageBox.Show("Nhập mã nhân viên!","Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             NhanVienBUS.Instance.TimKiemNhanVien(dgvNhanVien, maNhanVien);
         }
 
